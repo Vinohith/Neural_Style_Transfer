@@ -44,13 +44,13 @@ def preprocess_image(image_path):
 
 
 def deprocess_image(x):
-	x = x.reshape((3, img_nrows, img_ncols))
-	x = x.transpose((1,2,0))
+	x = x.reshape((img_nrows, img_ncols, 3))
+	#x = x.transpose((1,2,0))
+	x = x[:, :, ::-1]
 	x[:, :, 0] += 103.939
 	x[:, :, 1] += 116.779
-	x[:, :, 0] += 123.68
-	#BGR to RGB
-	x = x[:, :, ::-1]
+	x[:, :, 2] += 123.68
+	#BGR to RGB	
 	x = np.clip(x, 0, 255).astype('uint8')
 	return x
 
@@ -98,7 +98,7 @@ def total_variation_loss(x):
 
 #initializing the loss value
 loss = K.variable(0.)
-#feature output of the layer block5_conv2
+#feature output of the layer block2_conv2
 layer_features = output_dict['block2_conv2']
 content_image_features = layer_features[0, :, :, :]
 combination_image_features = layer_features[2, :, :, :]
@@ -111,8 +111,10 @@ for layer_name in feature_layers:
 	layer_features = output_dict[layer_name]
 	style_image_features = layer_features[1, :, :, :]
 	combination_image_features = layer_features[2, :, :, :]
-	loss += (style_weight / len(feature_layers)) * style_cost(style_image_features, combination_image_features)
+	sl = style_cost(style_image_features, combination_image_features)
+	loss += (style_weight / len(feature_layers)) * sl
 
+loss += tv_weight * total_variation_loss(combination_image)
 
 grads = K.gradients(loss, combination_image)
 
