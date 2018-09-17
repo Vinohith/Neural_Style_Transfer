@@ -2,6 +2,8 @@
 
 Neural Style Transfer is a method that allows us to generate Artistic Images by transfering the style of one image (say a beautiful painting) to another image (say a photo of a person). The resulting output is one image in the style of another. 
 
+According to the paper [A Neural Algorithm of Artistic Style](https://arxiv.org/pdf/1508.06576.pdf)
+
 This repository contains the code to run the model for Style Transfer on any images of ones choice. The model used is the VGG-19 architecture trained on ImageNet images. 
 The input to the network are the **Content/Base Image(C)**, the primary image on which the style is to be transfered and the **Style Image(S)**, the image whose style is to be transfered.
 
