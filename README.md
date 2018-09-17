@@ -33,12 +33,11 @@ There are a number of optional command-line arguments which can be passed in, in
 
 <br></br>
 
-## Content Image
+## Results
+### Content Image
 <img width="400" height="400" src="Content_Image/IMG-20170808-WA0000.jpg"/>
 
-<br></br>
-
-## Style Image and Generated Image
+### Style Image and Generated Image
 
 <img width="400" height="400" src="Style_Images/water.png"/>    <img width="400" height="400" src="Generated_Images/water.gif"/>
 
