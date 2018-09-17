@@ -37,17 +37,17 @@ There are a number of optional command-line arguments which can be passed in, in
 
 ## Results
 ### Content Image
-<img width="400" height="400" src="Content_Image/IMG-20170808-WA0000.jpg"/>
+<img width="300" height="300" src="Content_Image/IMG-20170808-WA0000.jpg"/>
 
 ### Style Image and Generated Image
 
-<img width="400" height="400" src="Style_Images/water.png"/>    <img width="400" height="400" src="Generated_Images/water.gif"/>
+<img width="300" height="300" src="Style_Images/water.png"/>    <img width="300" height="300" src="Generated_Images/water.gif"/>
 
-<img width="400" height="400" src="Style_Images/saatchi_art.jpg"/>    <img width="400" height="400" src="Generated_Images/saatchi_art.gif"/>
+<img width="300" height="300" src="Style_Images/saatchi_art.jpg"/>    <img width="300" height="300" src="Generated_Images/saatchi_art.gif"/>
 
-<img width="400" height="400" src="Style_Images/mountain.jpg"/>    <img width="400" height="400" src="Generated_Images/mountain.gif"/>
+<img width="300" height="300" src="Style_Images/mountain.jpg"/>    <img width="300" height="300" src="Generated_Images/mountain.gif"/>
 
-<img width="400" height="400" src="Style_Images/sun_fog.jpg"/>    <img width="400" height="400" src="Generated_Images/sun_water.gif"/>
+<img width="300" height="300" src="Style_Images/sun_fog.jpg"/>    <img width="300" height="300" src="Generated_Images/sun_water.gif"/>
 
 <br></br>
 ## Acknowledgements
