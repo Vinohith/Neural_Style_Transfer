@@ -3,6 +3,7 @@ from keras.preprocessing.image import load_img, save_img, img_to_array
 from keras.applications import vgg19
 from keras import backend as K
 import numpy as np
+from losses import style_loss, content_loss, total_variation_loss
 import time
 import argparse
 from scipy.optimize import fmin_l_bfgs_b
@@ -76,38 +77,6 @@ print('Loaded Model')
 
 #creating a dictionary with the layer name as key and the layer output as value
 output_dict = dict([(layer.name, layer.output) for layer in model.layers])
- 
-
-#defining the gram matrix
-def gram_matrix(x):
-	features = K.batch_flatten(K.permute_dimensions(x, (2, 0, 1)))
-	gram = K.dot(features, K.transpose(features))
-	return gram
-
-
-#defining a function to calculate the style loss
-#loss between the combination image and the style image
-def style_loss(style, combination):
-	S = gram_matrix(style)
-	C = gram_matrix(combination)
-	channels = 3
-	size = img_nrows * img_ncols
-	return K.sum(K.square(S - C)) / (4. * (channels ** 2) * (size ** 2))
-
-#defining a function to calculate the style loss
-#loss between the combination image and the actual content image
-def content_loss(content, combination):
-	return K.sum(K.square(combination - content))
-
-
-#defining the total variation loss
-#this is only to make the output combination image more smooth
-def total_variation_loss(x):
-	a = K.square(
-		x[:, :img_nrows - 1, :img_ncols - 1, :] - x[:, 1:, :img_ncols - 1, :])
-	b = K.square(
-		x[:, :img_nrows - 1, :img_ncols - 1, :] - x[:, :img_nrows - 1, 1:, :])
-	return K.sum(K.pow(a + b, 1.25))
 
 
 #initializing the loss as a tensorflow variable
@@ -136,11 +105,11 @@ for layer_name in feature_layers:
 	#combination_image_features output at the particular feature layer
 	combination_image_features = layer_features[2, :, :, :]
 	#calculating the style loss
-	sl = style_loss(style_image_features, combination_image_features)
+	sl = style_loss(style_image_features, combination_image_features, img_nrows, img_ncols)
 	loss += (style_weight / len(feature_layers)) * sl
 
 #calculating the total variation loss in the combination image
-loss += total_variation_weight * total_variation_loss(combination_image)
+loss += total_variation_weight * total_variation_loss(combination_image, img_nrows, img_ncols)
 
 
 #getting the gradients of the loss w.r.t the pixels of the combination image
@@ -185,6 +154,7 @@ class Evaluator(object):
         self.loss_value = None
         self.grad_values = None
         return grad_values
+
 
 evaluator = Evaluator()
 
