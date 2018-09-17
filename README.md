@@ -14,6 +14,6 @@ The input to the network are the **Content/Base Image(C)**, the primary image on
 
 <img width="400" height="400" src="Style_Images/saatchi_art.jpg"/>    <img width="400" height="400" src="Generated_Images/saatchi_art.gif"/>
 
-<img width="400" height="400" src="Style_Images/mountain.png"/>    <img width="400" height="400" src="Generated_Images/mountain.gif"/>
+<img width="400" height="400" src="Style_Images/mountain.jpg"/>    <img width="400" height="400" src="Generated_Images/mountain.gif"/>
 
-<img width="400" height="400" src="Style_Images/sun_fog.png"/>    <img width="400" height="400" src="Generated_Images/sun_fog.gif"/>
+<img width="400" height="400" src="Style_Images/sun_fog.jpg"/>    <img width="400" height="400" src="Generated_Images/sun_water.gif"/>
