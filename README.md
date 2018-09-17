@@ -13,6 +13,19 @@ The input to the network are the **Content/Base Image(C)**, the primary image on
 - Scipy 1.1
 
 ## Setup
+### Step 1:
+Clone the repository.
+```
+git clone https://github.com/Vinohith/Neural_Style_Transfer.git
+```
+
+### Step 2:
+Run the code
+```
+cd Neural_Style_Transfer
+python neural_style_transfer.py 'content_image_path' 'style_image_path' 'result_prefix'
+```
+There are a number of optional command-line arguments which can be passed in, including ```--iter```(number of iterations to run), ```--content_weight```(Content weight), ```--style_weight```(Style weight), ```--total_variation_weight```(Total Variation weight). Run the script with the ```--help``` or ```-h``` flag for more information.
 
 ## Content Image
 <img width="400" height="400" src="Content_Image/IMG-20170808-WA0000.jpg"/>
