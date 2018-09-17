@@ -7,7 +7,7 @@ According to the paper [A Neural Algorithm of Artistic Style](https://arxiv.org/
 This repository contains the code to run the model for Style Transfer on any images of ones choice. The model used is the VGG-19 architecture trained on ImageNet images. 
 The input to the network are the **Content/Base Image(C)**, the primary image on which the style is to be transfered and the **Style Image(S)**, the image whose style is to be transfered.
 
-<br></br>
+
 
 ## Requirement
 - Python 3.6
@@ -16,7 +16,7 @@ The input to the network are the **Content/Base Image(C)**, the primary image on
 - Argparse 1.1
 - Scipy 1.1
 
-<br></br>
+
 
 ## Setup
 ### Step 1:
@@ -33,7 +33,7 @@ python neural_style_transfer.py 'content_image_path' 'style_image_path' 'result_
 ```
 There are a number of optional command-line arguments which can be passed in, including ```--iter```(number of iterations to run), ```--content_weight```(Content weight), ```--style_weight```(Style weight), ```--total_variation_weight```(Total Variation weight). Run the script with the ```--help``` or ```-h``` flag for more information.
 
-<br></br>
+
 
 ## Results
 ### Content Image
@@ -49,7 +49,8 @@ There are a number of optional command-line arguments which can be passed in, in
 
 <img width="300" height="300" src="Style_Images/sun_fog.jpg"/>    <img width="300" height="300" src="Generated_Images/sun_water.gif"/>
 
-<br></br>
+
+
 ## Acknowledgements
 1. [A Neural Algorithm of Artistic Style](https://arxiv.org/pdf/1508.06576.pdf)
 2. [Convolutional neural networks for artistic style transfer](https://harishnarayanan.org/writing/artistic-style-transfer/)
