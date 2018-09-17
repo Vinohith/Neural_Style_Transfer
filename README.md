@@ -48,3 +48,10 @@ There are a number of optional command-line arguments which can be passed in, in
 <img width="400" height="400" src="Style_Images/mountain.jpg"/>    <img width="400" height="400" src="Generated_Images/mountain.gif"/>
 
 <img width="400" height="400" src="Style_Images/sun_fog.jpg"/>    <img width="400" height="400" src="Generated_Images/sun_water.gif"/>
+
+<br></br>
+## Acknowledgements
+1. [A Neural Algorithm of Artistic Style](https://arxiv.org/pdf/1508.06576.pdf)
+2. [Convolutional neural networks for artistic style transfer](https://harishnarayanan.org/writing/artistic-style-transfer/)
+3. [Keras implementation of Neural Style Transfer](https://github.com/keras-team/keras/blob/master/examples/neural_style_transfer.py)
+4. [Convolutional Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks)
